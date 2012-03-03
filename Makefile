@@ -22,7 +22,7 @@ build:
 	$(CC) $(CSTANDARD) -oS -o $(TARGET).elf $(SRC)
 
 debug:
-	$(CC) $(CSTANDARD) -oS -g -o $(TARGET).elf $(TARGET).c
+	$(CC) $(CSTANDARD) -oS -g -o $(TARGET).elf $(SRC)
 
 mspdebug:
 	$(MSPDEBUG) $(MSPPROGRAMMER)
