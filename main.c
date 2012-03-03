@@ -1,4 +1,3 @@
-/* Demo app to blink the red LED on the TI Launchpad */
 #include <stdint.h>
 #include <msp430g2001.h>
 #include <string.h>
