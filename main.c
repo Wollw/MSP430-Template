@@ -6,17 +6,16 @@
 int main(void) {
 	volatile int i;
 
-	// stop watchdog timer
+	// stop watchdog timer or the the mcu will keep resetting.
 	WDTCTL = WDTPW | WDTHOLD;
-	// set up bit 0 and 6 of P1 as output
+	// Set P1.0 and P1.6 as Output pins and make sure they
+    // start out set low.
 	P1DIR = 0x41;
-	// intialize P1 to 0
 	P1OUT = 0x00;
 
-	// loop forever
+    // Blink on and off periodically.
 	for (;;) {
 		P1OUT |= option_value("GREEN");
-		// delay for a while
 		for (i = 0; i < 0x6000; i++);
 		P1OUT &= ~option_value("GREEN");
 		for (i = 0; i < 0x6000; i++);

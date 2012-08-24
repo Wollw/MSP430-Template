@@ -5,5 +5,6 @@ typedef struct {
 	uint8_t setting;
 } option_t;
 
+// Returns a potential register state based on lookup key "name"
 uint8_t option_value(char name[]);
 #endif
